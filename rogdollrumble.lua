@@ -59,11 +59,11 @@ end
 
 makeMovable(Frame)
 
--- Function to equip hammer and auto attack
+-- Function to auto attack enemies
 local function autoAttack()
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
-    local hammer = character:FindFirstChild("Hammer") -- Ensure this matches the hammer's actual name
+    local hammer = character:FindFirstChild("Hammer") -- Adjust this if the name is different in-game
 
     if hammer then
         character.Humanoid:EquipTool(hammer) -- Equip the hammer
@@ -82,7 +82,7 @@ local function autoAttack()
             wait(1) -- Check every second
         end
     else
-        print("Hammer not found.")
+        print("Hammer not found. Please ensure you have the correct item equipped.")
     end
 end
 
