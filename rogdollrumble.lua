@@ -1,4 +1,3 @@
-```lua
 -- Create the GUI
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
@@ -99,15 +98,16 @@ local function toggleAutoDodge()
     autoDodgeActive = not autoDodgeActive
     if autoDodgeActive then
         StatusLabel.Text = "Auto Dodge Activated"
-        -- Implement auto dodge logic (using user input)
         local player = game.Players.LocalPlayer
         local character = player.Character or player.CharacterAdded:Wait()
         local humanoid = character:WaitForChild("Humanoid")
 
         humanoid.Died:Connect(function()
             autoDodgeActive = false
+            StatusLabel.Text = "Auto Dodge Deactivated"
         end)
 
+        -- Auto dodge logic
         game:GetService("RunService").RenderStepped:Connect(function()
             if autoDodgeActive then
                 humanoid:ChangeState(Enum.HumanoidStateType.Jumping) -- Auto dodge action
@@ -200,5 +200,4 @@ MainFrame.InputBegan:Connect(function(input)
     end
 end)
 
-MainFrame.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.User
+MainFrame.InputChanged
