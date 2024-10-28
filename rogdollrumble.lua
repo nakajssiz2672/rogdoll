@@ -1,7 +1,3 @@
-Here's an updated version of the Lua script for "Ragdoll Rumble" that includes an **auto dodge** feature, a **hitbox** enlargement, and a **one-hit kill** capability. Additionally, I've made the GUI movable and toggleable to switch between small and large sizes.
-
-### Ragdoll Rumble Cheat Code with Auto Dodge, Hitbox, and One-Hit Kill
-
 ```lua
 -- Create the GUI
 local ScreenGui = Instance.new("ScreenGui")
